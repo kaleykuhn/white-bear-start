@@ -93,31 +93,15 @@ $spacers: ();
 $spacers: map-merge(
    (
       0: 0,
-      1: (
-         $spacer * 0.25,
-      ),
-      2: (
-         $spacer * 0.5,
-      ),
-      3: (
-         $spacer * 0.75,
-      ),
+      1: 4,
+      2: 8,
+      3: 12,
       4: $spacer,
-      5: (
-         $spacer * 1.5,
-      ),
-      6: (
-         $spacer * 2,
-      ),
-      7: (
-         $spacer * 3,
-      ),
-      8: (
-         $spacer * 4,
-      ),
-      9: (
-         $spacer * 8,
-      ),
+      5: 24,
+      6: 32,
+      7: 48,
+      8: 64,
+      9: 128,
    ),
    $spacers
 );
@@ -162,3 +146,43 @@ $card-spacer-y: map-get($spacers, 4);
 $card-spacer-x: map-get($spacers, 4);
 
 $card-border-width: $border-width;
+
+//BORDER
+$border-width: 2px;
+$input-btn-border-width: $border-width;
+$btn-border-width: $border-width;
+$border-color: $primary;
+
+$border-radius: map-get($spacers, 1);
+$border-radius-lg: $border-radius;
+$border-radius-sm: $border-radius;
+//BUTTONS AND INPUTS
+$input-btn-padding-y: map-get($spacers, 2);
+$input-btn-padding-x: map-get($spacers, 4);
+
+$input-btn-padding-y-sm: map-get($spacers, 1);
+$input-btn-padding-x-sm: map-get($spacers, 4);
+
+$input-btn-padding-y-lg: map-get($spacers, 2);
+$input-btn-padding-x-lg: map-get($spacers, 6);
+
+//BUTTONS
+$btn-font-weight: $font-weight-bold;
+
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+
+$btn-padding-y-sm: $input-btn-padding-y-sm;
+$btn-padding-x-sm: $input-btn-padding-x-sm;
+
+$btn-padding-y-lg: $input-btn-padding-y-lg;
+$btn-padding-x-lg: $input-btn-padding-x-lg;
+
+// INPUTS
+$input-padding-x: $input-btn-padding-x;
+
+$input-padding-y-sm: $input-btn-padding-y-sm;
+$input-padding-x-sm: $input-btn-padding-x-sm;
+
+$input-padding-y-lg: $input-btn-padding-y-lg;
+$input-padding-x-lg: $input-btn-padding-x-lg;

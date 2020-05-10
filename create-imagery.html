@@ -1,0 +1,122 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style/dist.css" />
+      <title>White Bear Start</title>
+   </head>
+   <body>
+      <div
+         class="w-100 bg-success py-4 d-none justify-content-center fixed-top"
+         id="overlay-success"
+      >
+         <img
+            src="/icons/success.svg"
+            width="28px"
+            style="margin-bottom: 3px;"
+            class="mr-2"
+         />
+         <p class="lead">Card created!</p>
+      </div>
+      <div
+         class="w-100 bg-danger py-4 d-none justify-content-center fixed-top"
+         id="overlay-danger"
+      >
+         <img
+            src="/icons/error.svg"
+            width="28px"
+            style="margin-bottom: 3px;"
+            class="mr-2"
+         />
+         <p class="lead">Oops! Our bad.Please try again.</p>
+      </div>
+
+      <div class="container">
+         <div class="row">
+            <div
+               class="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1"
+            >
+               <!--want to match whatever design gives trial and error-->
+               <img
+                  src="icons/logo-app.svg"
+                  width="32px;"
+                  alt="White Bear logo"
+               />
+               <!--inline makes icon and name on same them on same line with font css var-->
+               <h3 class="d-inline text-brand">White Bear</h3>
+
+               <!--btn-link turns log out into link then moves to right side float-->
+               <button class="btn btn-link float-right">Log out</button>
+
+               <!-- d-flex makes element specifically here button span entire width of page btn role is assigned for screen assistance and aria label  -->
+               <div
+                  class="btn-group d-flex"
+                  role="navigation"
+                  aria-label="navigation"
+               >
+                  <!--tab active selects for page-->
+
+                  <button type="button" class="btn btn-secondary tab-active">
+                     Create new
+                  </button>
+
+                  <a href="index.html" type="button" class="btn btn-secondary">
+                     Review
+                  </a>
+
+                  <button type="button" class="btn btn-secondary tab-separator">
+                     All cards
+                  </button>
+               </div>
+               <h4 class="my-4 text-center text-muted">
+                  Add memorable imagery
+               </h4>
+               <div class="mb-2">
+                  <div class="card bg-primary">
+                     <div class="card-body">
+                        <!--display and hiding each on different screen sizes so d-sm-none would hide on small and d-none d-sm-block would be shown only on xs small screens , rows control how big text area is look at display in bootstrap documentation https://getbootstrap.com/docs/4.4/utilities/display/
+                      -->
+                        <textarea rows="11" class="d-sm-none"></textarea>
+                        <textarea rows="6" class="d-none d-sm-block"></textarea>
+                     </div>
+                  </div>
+
+                  <div class="card bg-secondary">
+                     <div class="card-body">
+                        One morning, when Gregor Samsa woke from troubled
+                        dreams, he found himself transformed in his bed into a
+                        horrible vermin. He lay on his armour-like back, and if
+                        he lifted his head a little he could see his brown
+                        belly, slightly domed and divided by arches into stiff
+                        sections. The bedding was hardly.
+                     </div>
+                  </div>
+               </div>
+
+               <p class="float-right mb-5 mt-2">0/240</p>
+               <div class="clearfix"></div>
+               <button class="btn btn-link">Back to answer</button>
+
+               <button
+                  class="btn btn-primary float-right btn-lg"
+                  id="save-imagery"
+               >
+                  <img
+                     src="/icons/save.svg"
+                     width="20px"
+                     style="margin-bottom: 3px;"
+                     class="mr-2"
+                  />
+                  Save
+               </button>
+            </div>
+         </div>
+      </div>
+   </body>
+
+   <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      defer
+   ></script>
+   <script src="script.js" defer></script>
+</html>

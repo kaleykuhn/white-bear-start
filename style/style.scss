@@ -1,3 +1,10 @@
+.bgl {
+   background-image: url("images/background-landing.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
 // styles log out to make flush with edge of card and font adjusted with var remove border truly flush
 .btn-link {
    padding-left: 0;

@@ -11332,6 +11332,13 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.bgl {
+  background-image: url("images/background-landing.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .btn-link {
   padding-left: 0;
   padding-right: 0;

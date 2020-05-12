@@ -20,15 +20,116 @@
                <h1 class="bear-text ml-4">White Bear</h1>
             </div>
          </div>
+         <!--card-->
          <div class="row">
-            <div class="col-4 ml-8">
+            <div
+               class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4 mb-6 mt-8"
+            >
                <div class="card"></div>
-               <div class="card-body">
-                  <h2 class="card-title"></h2>Nice to Meet You</h2>
+               <div class="card-body text-dark bg-white">
+                  <h2 class="card-title">Nice to Meet You</h2>
                   <p class="card-title">Sign up for White Bear.Free forever.</p>
+                  <a
+                     href="#formbutton"
+                     class="btn btn-block btn-success"
+                     id="formbutton"
+                     >Sign Up</a
+                  >
+                  <form id="form1" class="">
+                     <div class="form-group">
+                        <p class="text-success">let's get you signed up</p>
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input
+                           type="email"
+                           class="form-control"
+                           id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder=""
+                        />
+                        <small
+                           id="emailHelp"
+                           class="form-text text-muted"
+                        ></small>
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input
+                           type="password"
+                           class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder=""
+                        />
+                     </div>
+                     <!--<div class="form-group form-check">
+                        <input
+                           type="checkbox"
+                           class="form-check-input"
+                           id="exampleCheck1"
+                        />
+                        <label class="form-check-label" for="exampleCheck1"
+                           >Check if you are not a robot</label
+                        >
+                     </div>-->
+                     <button type="submit" class="btn btn-success btn-block">
+                        Let's go
+                     </button>
+                  </form>
                </div>
             </div>
+         
+         
+            <div
+            class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4 mb-6 mt-8"
+         >
+            <div class="card"></div>
+            <div class="card-body text-dark bg-white">
+               <h2 class="card-title">Welcome back</h2>
+               <p class="card-title">Log in with your email address and password.</p>
+               <form id="form2" class="">
+                  <div class="form-group">
+                     <p class="text-success"></p>
+                     <label for="exampleInputEmail1">Email address</label>
+                     <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail2"
+                        aria-describedby="emailHelp"
+                        placeholder=""
+                     />
+                     <small
+                        id="emailHelp"
+                        class="form-text text-muted"
+                     ></small>
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword2">Password</label>
+                     <input
+                        type="password"
+                        class="form-control"
+                        id="exampleInputPassword2"
+                        placeholder=""
+                     />
+                  </div>
+                  <!--<div class="form-group form-check">
+                     <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck1"
+                     />
+                     <label class="form-check-label" for="exampleCheck1"
+                        >Check if you are not a robot</label
+                     >
+                  </div>-->
+                  <button type="submit" class="btn btn-success float-right">
+                     Log in
+                  </button>
+               </form>
          </div>
       </div>
    </body>
+   <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      defer
+   ></script>
+   <script src="script.js" defer></script>
 </html>

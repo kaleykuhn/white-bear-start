@@ -11332,6 +11332,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+#form1 {
+  display: none;
+}
+
 .landing-background {
   background-image: url("/images/background-landing.jpg");
   background-size: cover;

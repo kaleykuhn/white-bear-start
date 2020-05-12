@@ -1,8 +1,19 @@
-.bgl {
-   background-image: url("images/background-landing.jpg");
+.landing-background {
+   background-image: url("/images/background-landing.jpg");
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
+}
+.bear-text {
+   color: white;
+}
+
+// styles log out to make flush with edge of card and font adjusted with var remove border truly flush
+.btn-link {
+   padding-left: 0;
+   padding-right: 0;
+   font-weight: $font-weight-bold;
+   border: 0;
 }
 
 // styles log out to make flush with edge of card and font adjusted with var remove border truly flush
@@ -66,7 +77,7 @@ textarea {
 .card textarea {
    color: $white;
 }
-/*When something has a bg of sucess and lead p tag add space after lead because it is nested*/
+/*When something has a bg of success and lead p tag add space after lead because it is nested*/
 .bg-success,
 .bg-danger p.lead {
    color: $white;

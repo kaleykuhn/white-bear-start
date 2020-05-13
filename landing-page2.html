@@ -11,7 +11,7 @@
          <!--justify content used to so items are packed flush on left of the alignment container-->
          <div class="row justify-content-left">
             <!--d-flex is place on div in   -->
-            <div class="d-flex mt-8 ml-8"> 
+            <div class="col-12 d-flex mt-8 ml-8">
                <img
                   class="img-fluid"
                   src="images/logo-landing.png"
@@ -25,20 +25,23 @@
             <div
                class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4 mb-6 mt-8"
             >
-               <div class="card"></div>
-               <div class="card-body text-dark bg-white">
-                  <h2 class="card-title">Nice to Meet You</h2>
-                  <p class="card-title">Sign up for White Bear.Free forever.</p>
-                  <a
-                     href="#formbutton"
-                     class="btn btn-block btn-success"
-                     id="formbutton"
-                     >Sign Up</a
-                  >
-                  <form id="form1" class="">
-                     <div class="form-group">
+               <div class="card rounded">
+                  <div class="card-body text-dark bg-white">
+                     <h2 class="card-title">Nice to Meet You</h2>
+                     <p class="card-title">
+                        Sign up for White Bear.Free forever.
+                     </p>
+                     <a
+                        href="#formbutton"
+                        class="btn btn-block btn-success"
+                        id="formbutton"
+                        >Sign Up</a
+                     >
+                     <div class="" id="form1">
                         <p class="text-success">let's get you signed up</p>
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1" class="text-muted"
+                           >Email address</label
+                        >
                         <input
                            type="email"
                            class="form-control"
@@ -50,45 +53,39 @@
                            id="emailHelp"
                            class="form-text text-muted"
                         ></small>
-                     </div>
-                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword1" class="text-muted"
+                           >Password</label
+                        >
                         <input
                            type="password"
                            class="form-control"
                            id="exampleInputPassword1"
                            placeholder=""
                         />
-                     </div>
-                     <!--<div class="form-group form-check">
-                        <input
-                           type="checkbox"
-                           class="form-check-input"
-                           id="exampleCheck1"
-                        />
-                        <label class="form-check-label" for="exampleCheck1"
-                           >Check if you are not a robot</label
+                        <button
+                           type="submit"
+                           class="btn btn-success btn-block mt-6"
                         >
-                     </div>-->
-                     <button type="submit" class="btn btn-success btn-block">
-                        Let's go
-                     </button>
-                  </form>
+                           Let's go
+                        </button>
+                     </div>
+                  </div>
                </div>
             </div>
-         
-         
             <div
-            class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4 mb-6 mt-8"
-         >
-            <div class="card"></div>
-            <div class="card-body text-dark bg-white">
-               <h2 class="card-title">Welcome back</h2>
-               <p class="card-title">Log in with your email address and password.</p>
-               <form id="form2" class="">
-                  <div class="form-group">
+               class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4 mb-6 mt-8"
+            >
+               <div class="card">
+                  <div class="card-body text-dark bg-white">
+                     <h2 class="card-title">Welcome back</h2>
+                     <p class="card-title">
+                        Log in with your email address and password.
+                     </p>
+
                      <p class="text-success"></p>
-                     <label for="exampleInputEmail1">Email address</label>
+                     <label for="exampleInputEmail1" class="text-muted"
+                        >Email address</label
+                     >
                      <input
                         type="email"
                         class="form-control"
@@ -96,34 +93,27 @@
                         aria-describedby="emailHelp"
                         placeholder=""
                      />
-                     <small
-                        id="emailHelp"
-                        class="form-text text-muted"
-                     ></small>
-                  </div>
-                  <div class="form-group">
-                     <label for="exampleInputPassword2">Password</label>
+                     <small id="emailHelp" class="form-text text-muted"></small>
+
+                     <label for="exampleInputPassword2" class="text-muted"
+                        >Password</label
+                     >
                      <input
                         type="password"
                         class="form-control"
                         id="exampleInputPassword2"
                         placeholder=""
                      />
-                  </div>
-                  <!--<div class="form-group form-check">
-                     <input
-                        type="checkbox"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                     />
-                     <label class="form-check-label" for="exampleCheck1"
-                        >Check if you are not a robot</label
+
+                     <button
+                        type="submit"
+                        class="btn btn-success float-right mt-6"
                      >
-                  </div>-->
-                  <button type="submit" class="btn btn-success float-right">
-                     Log in
-                  </button>  
-               </form>
+                        Log in
+                     </button>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </body>

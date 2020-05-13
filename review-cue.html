@@ -1,0 +1,71 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style/dist.css" />
+      <title>Review Cue</title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div
+               class="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1"
+            >
+               <!--want to match whatever design gives trial and error-->
+               <img
+                  src="icons/logo-app.svg"
+                  width="32px;"
+                  alt="White Bear logo"
+               />
+               <!--inline makes icon and name on same them on same line with font css var-->
+               <h3 class="d-inline text-brand">White Bear</h3>
+
+               <!--btn-link turns log out into link then moves to right side float-->
+               <button class="btn btn-link float-right">Log out</button>
+
+               <!-- d-flex makes element specifically here button span entire width of page btn role is assigned for screen assistance and aria label  -->
+               <div
+                  class="btn-group d-flex mb-5"
+                  role="navigation"
+                  aria-label="navigation"
+               >
+                  <a
+                     href="create-answer.html"
+                     type="button"
+                     class="btn btn-secondary"
+                  >
+                     Create new
+                  </a>
+                  <button
+                     type="button"
+                     class="btn btn-secondary tab-seperator tab-active"
+                  >
+                     Review
+                  </button>
+                  <button type="button" class="btn btn-secondary tab-separator">
+                     All cards
+                  </button>
+               </div>
+               <div class="mb-5">
+                  <div class="card bg-primary">
+                     <div class="card-body">
+                        One morning, when Gregor Samsa woke from troubled
+                        dreams, he found himself transformed in his bed into a
+                        horrible vermin. He lay on his armour-like back, and if
+                        he lifted his head a little he could see his brown
+                        belly, slightly domed and divided by arches into stiff
+                        sections. The bedding was hardly.
+                     </div>
+                  </div>
+               </div>
+               <button class="btn btn-link">Previous card</button>
+               <div class="float-right">
+                  <button class="btn btn-outline-primary mr-0">
+                     Show Answer
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

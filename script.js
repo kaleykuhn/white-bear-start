@@ -8,3 +8,15 @@ $("#formbutton").click(function () {
    $("#form1").toggle();
    $("#formbutton").remove();
 });
+//$("#customCheck1").click(function () {
+//$("#delete-button").toggle("d-none display");
+//});
+$(function () {
+   $("#customCheck1").click(function () {
+      if ($(this).is(":checked")) {
+         $("#delete-button").show();
+      } else {
+         $("#delete-button").hide();
+      }
+   });
+});

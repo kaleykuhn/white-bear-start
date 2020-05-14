@@ -5,5 +5,140 @@
       <link rel="stylesheet" href="style/dist.css" />
       <title>Document</title>
    </head>
-   <body></body>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div
+               class="col-12 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1"
+            >
+               <!--want to match whatever design gives trial and error-->
+               <img
+                  src="icons/logo-app.svg"
+                  width="32px;"
+                  alt="White Bear logo"
+               />
+               <!--inline makes icon and name on same them on same line with font css var-->
+               <h3 class="d-inline text-brand">White Bear</h3>
+
+               <!--btn-link turns log out into link then moves to right side float-->
+               <button class="btn btn-link float-right">Log out</button>
+
+               <!-- d-flex makes element specifically here button span entire width of page btn role is assigned for screen assistance and aria label  -->
+               <div
+                  class="btn-group d-flex"
+                  role="navigation"
+                  aria-label="navigation"
+               >
+                  <!--tab active selects for page-->
+
+                  <button type="button" class="btn btn-secondary tab-active">
+                     Create new
+                  </button>
+
+                  <a href="index.html" type="button" class="btn btn-secondary">
+                     Review
+                  </a>
+
+                  <button type="button" class="btn btn-secondary tab-separator">
+                     All cards
+                  </button>
+               </div>
+               <h4 class="my-4 text-center text-muted">
+                  Edit
+               </h4>
+               <div class="mb-2">
+                  <div class="card bg-primary">
+                     <div class="card-body">
+                        One morning, when Gregor Samsa woke from troubled
+                        dreams, he found himself transformed in his bed into a
+                        horrible vermin. He lay on his armour-like back, and if
+                        he lifted his head a little he could see.
+                        <!--display and hiding each on different screen sizes so d-sm-none would hide on small and d-none d-sm-block would be shown only on xs small screens , rows control how big text area is look at display in bootstrap documentation https://getbootstrap.com/docs/4.4/utilities/display/
+                      -->
+                        <textarea rows="11" class="d-sm-none"></textarea>
+                        <textarea rows="2" class="d-none d-sm-block"></textarea>
+                     </div>
+                  </div>
+
+                  <div class="card bg-secondary">
+                     <div class="card-body">
+                        A wonderful serenity has taken possession of my entire
+                        soul, like these sweet mornings of spring which I enjoy
+                        with my whole heart. I am alone
+                        <textarea rows="11" class="d-sm-none"></textarea>
+                        <textarea rows="2" class="d-none d-sm-block"></textarea>
+                     </div>
+                  </div>
+               </div>
+               <p class="float-right mb-5 mt-2">205/240</p>
+               <div class="clearfix"></div>
+               <button class="btn btn-link" id="create-error">
+                  Discard changes
+               </button>
+
+               <button
+                  class="btn btn-primary float-right btn-lg"
+                  id="save-imagery"
+               >
+                  <img
+                     src="/icons/save.svg"
+                     width="20px"
+                     style="margin-bottom: 3px;"
+                     class="mr-2"
+                  />
+                  Save
+               </button>
+               <h4 class="my-8 text-center text-muted">
+                  Card Properties
+               </h4>
+               <div class="row">
+                  <div class="col-4 d-flex">
+                     <h6 class="text-muted">Created on:</h6>
+                  </div>
+                  <div class="col-4 ml-6 d-flex">
+                     <h6 class="">Dec. 24, 2019</h6>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-4 d-flex">
+                     <h6 class="text-muted">Last attempt:</h6>
+                  </div>
+                  <div class="col-4 d-flex ml-6">
+                     <h6 class="">Dec. 31, 2019</h6>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-4 d-flex">
+                     <h6 class="text-muted">Next attempt:</h6>
+                  </div>
+                  <div class="col-4 ml-6 d-flex">
+                     <h6 class="">Jul. 14, 2020</h6>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-4 d-flex">
+                     <h6 class="text-muted">Consecutives:</h6>
+                  </div>
+                  <div class="col-4 ml-6 d-flex">
+                     <h6 class="">4</h6>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-6 mt-4">
+                     <div class="custom-control custom-checkbox">
+                        <input
+                           type="checkbox"
+                           class="custom-control-input"
+                           id="customCheck1"
+                        />
+                        <label class="custom-control-label" for="customCheck1"
+                           >Show delete button</label
+                        >
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>

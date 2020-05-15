@@ -11,7 +11,7 @@ $("#formbutton").click(function () {
 //$("#customCheck1").click(function () {
 // $("#delete-button").toggle(" display d-none");
 //});
-$(function () {
+/*/$(function () {
    $("#customCheck1").click(function () {
       if ($(this).is(":checked")) {
          $("#delete-button").show();
@@ -19,4 +19,7 @@ $(function () {
          $("#delete-button").hide();
       }
    });
+/});*/
+$("#show-delete").click(function () {
+   $("#delete-button").toggleClass("d-none");
 });

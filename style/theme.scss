@@ -161,7 +161,7 @@ $input-btn-border-width: $border-width;
 $btn-border-width: $border-width;
 $border-color: $primary;
 
-$border-radius: map-get($spacers, 1);
+$border-radius: 4px;
 $border-radius-lg: $border-radius;
 $border-radius-sm: $border-radius;
 //BUTTONS AND INPUTS

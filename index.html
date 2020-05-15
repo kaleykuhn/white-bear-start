@@ -7,17 +7,19 @@
    </head>
    <body class="landing-background">
       <!-- container-fluid makes this span the entire screen  -->
-      <div class="container-fluid">
+      <div class="container">
          <!--justify content used to so items are packed flush on left of the alignment container-->
-         <div class="row justify-content-left">
+         <div class="row py-6">
             <!--d-flex is place on div in   -->
-            <div class="col-12 d-flex mt-8 ml-2">
+            <div class="col-1 offset-3">
                <img
-                  class="img-fluid"
+                  class="bear logo"
                   src="images/logo-landing.png"
                   alt="white bear outline constelation shape walking left"
                />
-               <h1 class="bear-text ml-4 mr-8">White Bear</h1>
+            </div>
+            <div class="col-6 offset-3">
+               <h1 class="bear-text">White Bear</h1>
             </div>
          </div>
          <!--card-->
@@ -25,7 +27,7 @@
             <div
                class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-2 col-lg-4 offset-xl-2 col-xl-4 mb-6 mt-8"
             >
-               <div class="card rounded">
+               <div class="card">
                   <div class="card-body text-dark bg-white rounded">
                      <h2 class="card-title">Nice to Meet You</h2>
                      <h7 class="card-title">
@@ -77,7 +79,7 @@
                class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-1 col-lg-4 offset-xl-1 col-xl-4 mb-6 mt-8"
             >
                <div class="card">
-                  <div class="card-body text-dark bg-white">
+                  <div class="card-body text-dark bg-white rounded">
                      <h2 class="card-title">Welcome back</h2>
                      <p class="card-title">
                         Log in with your email address and password.
@@ -106,12 +108,13 @@
                         placeholder=""
                      />
 
-                     <button
-                        type="submit"
+                     <a
+                        href="create-cue.html"
+                        type="button"
                         class="btn btn-success float-right mt-6"
                      >
                         Log in
-                     </button>
+                     </a>
                   </div>
                </div>
             </div>

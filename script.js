@@ -9,7 +9,7 @@ $("#formbutton").click(function () {
    $("#formbutton").remove();
 });
 //$("#customCheck1").click(function () {
-//$("#delete-button").toggle("d-none display");
+// $("#delete-button").toggle(" display d-none");
 //});
 $(function () {
    $("#customCheck1").click(function () {

@@ -63,3 +63,22 @@ $("#letsgo-button-landing").click(function () {
    //  $("#exampleInputPassword1").removeClass("is-invalid");
    //  $("#exampleInputPassword1").addClass("is-valid");
 });
+$("#answerArea").keyup(function () {
+   // Each char in text area counted and displayed
+   var answerInput = $("#answerArea").val().length;
+   console.log(answerInput);
+   var inputCounter = $("#characterCounter").text(answerInput + "/240");
+   console.log(inputCounter);
+   if (answerInput <= 0 || answerInput <= 240) {
+      $("#nextButton").removeClass("disabled");
+      $(inputCounter).removeClass("text-danger");
+   } else if (answerInput === 0 || answerInput > 240) {
+      $("#nextButton").addClass("disabled");
+      $("#characterCounter").addClass("text-danger");
+   } else {
+      $("#nextButton").removeClass("disabled");
+   }
+});
+//$("#textInput").keyup(function () {
+//\ var answerInput = $("#")
+//});

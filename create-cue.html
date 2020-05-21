@@ -57,14 +57,17 @@
                         <!--display and hiding each on different screen sizes so d-sm-none would hide on small and d-none d-sm-block would be shown only on xs small screens , rows control how big text area is look at display in bootstrap documentation https://getbootstrap.com/docs/4.4/utilities/display/
                       -->
                         <textarea autofocus  rows="11" class="d-sm-none"></textarea>
-                        <textarea autofocus rows="6" class="d-none d-sm-block"></textarea>
+                        <textarea autofocus rows="6" class="d-none d-sm-block" id="answerArea"></textarea>
                      </div>
                   </div>
                </div>
 
-               <p class="float-right mb-5 mt-2">0/240</p>
+               <p class="float-right mb-5 mt-2" id="characterCounter">0/240</p>
                <div class="clearfix"></div>
-               <a href="create-imagery.html" class="btn btn-outline-primary btn-lg float-right">
+               <a href="create-imagery.html" class="btn btn-outline-primary btn-lg float-right disabled" id="nextButton"
+               
+               >
+
                   Next
                </a>
 

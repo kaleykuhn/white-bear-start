@@ -36,9 +36,9 @@ $("#letsgo-button-landing").click(function () {
       $("#exampleInputEmail1").removeClass("is-invalid");
       $("#exampleInputEmail1").addClass("is-valid");
    }
-});
-//check if password is filled out correctly and validate length
-$("#letsgo-button-landing").click(function () {
+   //});
+   //check if password is filled out correctly and validate length
+   //$("#letsgo-button-landing").click(function () {
    //check if password is filled out correctly
    var passwordInput = $("#exampleInputPassword1").val();
    if (passwordInput.length === 0) {
@@ -50,9 +50,9 @@ $("#letsgo-button-landing").click(function () {
       $("#password-error").hide();
       $("#exampleInputPassword1").addClass("is-invalid");
    } else {
-      $("password-error").hide();
+      $("#password-error").hide();
       $("#exampleInputPassword1").removeClass("is-invalid");
-      $("exampleInputPassword1").addClass("is-valid");
+      $("#exampleInputPassword1").addClass("is-valid");
    }
 
    //if (passwordInput == "") {

@@ -37,3 +37,29 @@ $("#letsgo-button-landing").click(function () {
       $("#exampleInputEmail1").addClass("is-valid");
    }
 });
+//check if password is filled out correctly and validate length
+$("#letsgo-button-landing").click(function () {
+   //check if password is filled out correctly
+   var passwordInput = $("#exampleInputPassword1").val();
+   if (passwordInput.length === 0) {
+      $("#password-error").show();
+      $("#exampleInputPassword1").addClass("is-invalid");
+      $("#password-error-length").hide();
+   } else if (passwordInput.length < 9) {
+      $("#password-error-length").show();
+      $("#password-error").hide();
+      $("#exampleInputPassword1").addClass("is-invalid");
+   } else {
+      $("password-error").hide();
+      $("#exampleInputPassword1").removeClass("is-invalid");
+      $("exampleInputPassword1").addClass("is-valid");
+   }
+
+   //if (passwordInput == "") {
+   // $("#password-error").show();
+   //$("#password-error").addClass("is-valid");
+   // } else {
+   //  $("password-error").hide();
+   //  $("#exampleInputPassword1").removeClass("is-invalid");
+   //  $("#exampleInputPassword1").addClass("is-valid");
+});

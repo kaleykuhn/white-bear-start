@@ -15,15 +15,15 @@ $("#show-delete").click(function () {
 
 $("#letsgo-button-landing").click(function () {
    //check if email is filled out correctly
-   var emailInput = $("#exampleInputEmail1").val();
+   var emailInput = $("#inputEmail1").val();
    //if emailInput is equal to blank show error msg
    if (emailInput == "") {
       $("#email-error").show();
-      $("#exampleInputEmail1").addClass("is-invalid");
+      $("#inputEmail1").addClass("is-invalid");
    } else {
       $("#email-error").hide();
-      $("#exampleInputEmail1").removeClass("is-invalid");
-      $("#exampleInputEmail1").addClass("is-valid");
+      $("#inputEmail1").removeClass("is-invalid");
+      $("#inputEmail1").addClass("is-valid");
    }
 
    //check if password is filled out correctly and validate length

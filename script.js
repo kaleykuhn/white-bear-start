@@ -65,3 +65,9 @@ $("#answerArea").keyup(function () {
       $("#characterCounter").removeClass("text-danger");
    }
 });
+
+$("#letsgo-button-landing").click(function () {
+   var atPos = "#emailInput1".indexOf("@");
+   console.log(atPos);
+   var 
+});

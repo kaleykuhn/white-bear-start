@@ -7,15 +7,19 @@ $("#create-error").click(function () {
    $("#overlay-danger").toggleClass(" d-flex d-none");
 });
 
+// Edit Cards delete button
+$("#show-delete").click(function () {
+   $("#delete-button").toggleClass("d-none");
+});
 // Landing Page
 $("#formbutton").click(function () {
    $("#form1").toggle();
    $("#formbutton").remove();
 });
-// all cards delete button
-$("#show-delete").click(function () {
-   $("#delete-button").toggleClass("d-none");
-});
+// Edit Cards delete button
+//$("#show-delete").click(function () {
+//$("#delete-button").toggleClass("d-none");
+//});
 //Email and Password Validation
 $("#letsgo-button-landing").click(function () {
    //check if email is filled out correctly
@@ -85,8 +89,19 @@ $("#letsgo-button-landing").click(function () {
       $("#inputPassword1").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
    }
+
+   if ((userEmailValid, validPassword)) {
+      var newUserSubmission = {
+         _id: "get id",
+         email: emailInput,
+         password: passwordInput,
+         createdOn: "getDate",
+      };
+   }
+   console.log(newUserSubmission);
 });
 //create cue page
+//character counter
 $("#answerArea").keyup(function () {
    // for each character entered in textarea display amount of characters preceding /240
    var answerInput = $("#answerArea").val().length;

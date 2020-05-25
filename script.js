@@ -1,23 +1,34 @@
+// overlays on create imagery
+
 $("#save-imagery").click(function () {
    $("#overlay-success").toggleClass("d-flex d-none");
 });
 $("#create-error").click(function () {
    $("#overlay-danger").toggleClass(" d-flex d-none");
 });
+
+// Landing Page
 $("#formbutton").click(function () {
    $("#form1").toggle();
    $("#formbutton").remove();
 });
-
+// all cards delete button
 $("#show-delete").click(function () {
    $("#delete-button").toggleClass("d-none");
 });
-
+//Email and Password Validation
 $("#letsgo-button-landing").click(function () {
    //check if email is filled out correctly
    var emailInput = $("#inputEmail1").val();
+   //atLocal checks the emailInput to ensure there is a local part
+   var atLocal = emailInput.indexOf("@");
+   // beforeAtlocal pulls the email address of the user but cuts at @
+   var beforeAtLocal = emailInput.slice(0, atLocal);
+   //userEmail represents a valid user email address
+   console.log(beforeAtLocal);
+   var userEmailValid = false;
    //if emailInput is equal to blank show error msg
-   if (emailInput == "") {
+   if (emailInput === "") {
       $("#email-error").show();
       $("#inputEmail1").addClass("is-invalid");
    } else {
@@ -25,25 +36,55 @@ $("#letsgo-button-landing").click(function () {
       $("#inputEmail1").removeClass("is-invalid");
       $("#inputEmail1").addClass("is-valid");
    }
+   // if email does not contain local part show error msg
+   if (atLocal == -1) {
+      $("#email-error-local").show();
+      $("#email-error").hide();
+      $("#inputEmail1").addClass("is-invalid");
+      $("#inputEmail1").removeClass("is-valid");
+   } else {
+      userEmailValid = true;
+   }
+   if (userEmailValid === true) {
+      $("#email-error-local").hide();
+      $("#inputEmail1").addClass("is-valid");
+      $("#inputEmail1").removeClass("is-invalid");
+   }
+   // if any error is present show as invalid
+   else {
+      $("#email-error").show();
+      $("#inputEmail1").addClass("is-invalid");
+      $("#inputEmail1").removeClass("is-valid");
+   }
 
    //check if password is filled out correctly and validate length
-
+   var validPassword = false;
    var passwordInput = $("#inputPassword1").val();
    if (passwordInput.length === 0) {
       $("#password-error").show();
       $("#inputPassword1").addClass("is-invalid");
       $("#password-error-length").hide();
+      $("#password-error-local").hide();
    } else if (passwordInput.length < 9) {
       $("#password-error-length").show();
       $("#password-error").hide();
+      $("#password-error-local").hide();
+      $("#inputPassword1").addClass("is-invalid");
+   } else if (passwordInput.indexOf(beforeAtLocal) > -1) {
+      $("#password-error-local").show();
+      $("#password-error").hide();
+      $("#password-error-length").hide();
       $("#inputPassword1").addClass("is-invalid");
    } else {
+      validPassword = true;
+      $("#password-error-local").hide();
       $("#password-error").hide();
+      $("#password-error-length").hide();
       $("#inputPassword1").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
    }
 });
-
+//create cue page
 $("#answerArea").keyup(function () {
    // for each character entered in textarea display amount of characters preceding /240
    var answerInput = $("#answerArea").val().length;
@@ -66,8 +107,9 @@ $("#answerArea").keyup(function () {
    }
 });
 
-$("#letsgo-button-landing").click(function () {
-   var atPos = "#emailInput1".indexOf("@");
-   console.log(atPos);
-   var 
-});
+//$("#letsgo-button-landing").click(function () {
+// var atPos = "#emailInput1".indexOf("@");
+// console.log(atPos);
+//let atPosPas = "#emailInput1".slice(0);
+// console.log(atPosPas);
+//});

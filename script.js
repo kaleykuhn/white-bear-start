@@ -70,11 +70,13 @@ $("#letsgo-button-landing").click(function () {
       $("#password-error").hide();
       $("#password-error-local").hide();
       $("#inputPassword1").addClass("is-invalid");
+      //if char in password input are the same as emailinput error
    } else if (passwordInput.indexOf(beforeAtLocal) > -1) {
       $("#password-error-local").show();
       $("#password-error").hide();
       $("#password-error-length").hide();
       $("#inputPassword1").addClass("is-invalid");
+      // else validate to true and hide all errors
    } else {
       validPassword = true;
       $("#password-error-local").hide();
@@ -106,10 +108,3 @@ $("#answerArea").keyup(function () {
       $("#characterCounter").removeClass("text-danger");
    }
 });
-
-//$("#letsgo-button-landing").click(function () {
-// var atPos = "#emailInput1".indexOf("@");
-// console.log(atPos);
-//let atPosPas = "#emailInput1".slice(0);
-// console.log(atPosPas);
-//});

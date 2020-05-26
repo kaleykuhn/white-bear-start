@@ -127,8 +127,8 @@ $("#letsgo-button-landing").click(function () {
 
    var randomNumberForId = Math.floor(Math.random() * 1000);
    // getNewId is found by concatenating the current date and a ramdom number between 000-999
-   var getNewId = "" + timeMilleseconds + randomNumberForId;
-   console.log(getNewId);
+   var getNewId = "" + timeMilliseconds + randomNumberForId;
+   console.log(randomNumberForId);
 
    if (userEmailValid && validPassword) {
       var newUserSubmission = {

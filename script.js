@@ -89,13 +89,53 @@ $("#letsgo-button-landing").click(function () {
       $("#inputPassword1").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
    }
+   // Create new Id amd get Created On Date
 
-   if ((userEmailValid, validPassword)) {
+   // Date variables
+   var getTodayDate = new Date();
+   var dateYear = getTodayDate.getYear() - 100;
+   console.log(dateYear);
+   var dateMonth = getTodayDate.getMonth();
+   console.log(dateMonth);
+   var dateDay = getTodayDate.getDay();
+   console.log(dateDay);
+   var timeHours = getTodayDate.getHours();
+   console.log(timeHours);
+   var timeMinutes = getTodayDate.getMinutes();
+   console.log(timeMinutes);
+   var timeSeconds = getTodayDate.getSeconds();
+   console.log(timeSeconds);
+   var timeMilliseconds = getTodayDate.getMilliseconds();
+   console.log(timeMilliseconds);
+
+   function addPadding(num) {
+      if (String(num).length < 2) {
+         return "0" + num.toString();
+      } else {
+         return num;
+      }
+   }
+   var getTodayDate =
+      "" + //turns it into a readable string
+      addPadding(dateYear) +
+      addPadding(dateMonth) +
+      addPadding(dateDay) +
+      addPadding(timeHours) +
+      addPadding(timeMinutes) +
+      addPadding(timeSeconds);
+   console.log(getTodayDate);
+
+   var randomNumberForId = Math.floor(Math.random() * 1000);
+   // getNewId is found by concatenating the current date and a ramdom number between 000-999
+   var getNewId = "" + timeMilleseconds + randomNumberForId;
+   console.log(getNewId);
+
+   if (userEmailValid && validPassword) {
       var newUserSubmission = {
-         _id: "get id",
+         _id: getNewId,
          email: emailInput,
          password: passwordInput,
-         createdOn: "getDate",
+         createdOn: getTodayDate,
       };
    }
    console.log(newUserSubmission);

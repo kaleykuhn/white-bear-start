@@ -93,11 +93,11 @@ $("#letsgo-button-landing").click(function () {
 
    // Date variables
    var getTodayDate = new Date();
-   var dateYear = getTodayDate.getYear() - 100;
-   console.log(dateYear);
-   var dateMonth = getTodayDate.getMonth();
+   var dateYear = getTodayDate.getFullYear();
+   dateYear = dateYear.toString().substr(-2);
+   var dateMonth = getTodayDate.getMonth() + 1;
    console.log(dateMonth);
-   var dateDay = getTodayDate.getDay();
+   var dateDay = getTodayDate.getDate();
    console.log(dateDay);
    var timeHours = getTodayDate.getHours();
    console.log(timeHours);
@@ -107,35 +107,54 @@ $("#letsgo-button-landing").click(function () {
    console.log(timeSeconds);
    var timeMilliseconds = getTodayDate.getMilliseconds();
    console.log(timeMilliseconds);
+   function addThreePadding(num) {
+      // A1: number
+      // R: string
 
-   function addPadding(num) {
-      if (String(num).length < 2) {
-         return "0" + num.toString();
+      var numAsString = String(num);
+      if (numAsString.length === 1) {
+         return "00" + numAsString; // 4 returns "004"
+      } else if (numAsString.length === 2) {
+         return "0" + numAsString; // 44 returns "044"
       } else {
-         return num;
+         return numAsString;
       }
    }
-   var getTodayDate =
-      "" + //turns it into a readable string
-      addPadding(dateYear) +
-      addPadding(dateMonth) +
-      addPadding(dateDay) +
-      addPadding(timeHours) +
-      addPadding(timeMinutes) +
-      addPadding(timeSeconds);
-   console.log(getTodayDate);
+   function addTwoPadding(num) {
+      // A1: number
+      // R: string
 
+      var numAsString = String(num);
+      if (numAsString.length === 1) {
+         return "0" + numAsString; // 4 returns "04"
+      } else {
+         return numAsString;
+      }
+   }
+   var getCreatedOnDate =
+      "" + //turns it into a readable string
+      dateYear +
+      addTwoPadding(dateMonth) +
+      addTwoPadding(dateDay) +
+      addTwoPadding(timeHours) +
+      addTwoPadding(timeMinutes) +
+      addTwoPadding(timeSeconds);
+   console.log(getCreatedOnDate); //format of two digit number
+
+   //variable for random number for Id
    var randomNumberForId = Math.floor(Math.random() * 1000);
-   // getNewId is found by concatenating the current date and a ramdom number between 000-999
-   var getNewId = "" + timeMilliseconds + randomNumberForId;
-   console.log(randomNumberForId);
+
+   // getNewId is found by concatenating the current date and a random number between 000-999
+   var paddedMilliseconds = addThreePadding(timeMilliseconds);
+   var paddedRandomNumId = addThreePadding(randomNumberForId);
+   var getNewId = paddedMilliseconds + paddedRandomNumId;
 
    if (userEmailValid && validPassword) {
       var newUserSubmission = {
          _id: getNewId,
          email: emailInput,
          password: passwordInput,
-         createdOn: getTodayDate,
+         createdOn: getCreatedOnDate,
       };
    }
    console.log(newUserSubmission);

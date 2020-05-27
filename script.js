@@ -1,12 +1,17 @@
 // overlays on create imagery
 
-$("#save-imagery").click(function () {
+/*$("#save-imagery").click(function () {
    $("#overlay-success").toggleClass("d-flex d-none");
+   // Get the date info
+     createaDate();
+   //var for random id num
+   var randomNumberForId = Math.floor(Math.random() * 1000);
 });
 $("#create-error").click(function () {
    $("#overlay-danger").toggleClass(" d-flex d-none");
 });
-
+// Get the date info
+createaDate();*/
 // Edit Cards delete button
 $("#show-delete").click(function () {
    $("#delete-button").toggleClass("d-none");
@@ -181,4 +186,83 @@ $("#answerArea").keyup(function () {
       $("#nextButton").attr("disabled", false);
       $("#characterCounter").removeClass("text-danger");
    }
+});
+// overlays on create imagery
+
+$("#save-imagery").click(function () {
+   $("#overlay-success").toggleClass("d-flex d-none");
+
+   // Get the date info and id
+   var getTodayDate = new Date();
+   var dateYear = getTodayDate.getFullYear();
+   dateYear = dateYear.toString().substr(-2);
+   var dateMonth = getTodayDate.getMonth() + 1;
+   console.log(dateMonth);
+   var dateDay = getTodayDate.getDate();
+   console.log(dateDay);
+   var timeHours = getTodayDate.getHours();
+   console.log(timeHours);
+   var timeMinutes = getTodayDate.getMinutes();
+   console.log(timeMinutes);
+   var timeSeconds = getTodayDate.getSeconds();
+   console.log(timeSeconds);
+   var timeMilliseconds = getTodayDate.getMilliseconds();
+   console.log(timeMilliseconds);
+   function addThreePadding(num) {
+      // A1: number
+      // R: string
+
+      var numAsString = String(num);
+      if (numAsString.length === 1) {
+         return "00" + numAsString; // 4 returns "004"
+      } else if (numAsString.length === 2) {
+         return "0" + numAsString; // 44 returns "044"
+      } else {
+         return numAsString;
+      }
+   }
+   function addTwoPadding(num) {
+      // A1: number
+      // R: string
+
+      var numAsString = String(num);
+      if (numAsString.length === 1) {
+         return "0" + numAsString; // 4 returns "04"
+      } else {
+         return numAsString;
+      }
+   }
+   var getCreatedOnDate =
+      "" + //turns it into a readable string
+      dateYear +
+      addTwoPadding(dateMonth) +
+      addTwoPadding(dateDay) +
+      addTwoPadding(timeHours) +
+      addTwoPadding(timeMinutes) +
+      addTwoPadding(timeSeconds);
+   console.log(getCreatedOnDate); //format of two digit number
+
+   //var for random id num
+   var randomNumberForId = Math.floor(Math.random() * 1000);
+   console.log(randomNumberForId);
+   // getNewId is found by concatenating the current date and a random number between 000-999
+   var paddedMilliseconds = addThreePadding(timeMilliseconds);
+   var paddedRandomNumId = addThreePadding(randomNumberForId);
+   var getNewId = paddedMilliseconds + paddedRandomNumId;
+
+   var userCreateImInput = {
+      id_: getNewId,
+      imagery:
+         "A delicious shishkebab but the first bite of meat after the pointy end is spicy & makes an exclamation point appear over my head like in a JRPG.",
+      answer:
+         "The syntax for making a comment in HTML is <!-- Mike's comment here -->",
+      levelNum: 1,
+      successfulAttemptsNum: 0,
+      createdOn: getCreatedOnDate,
+      lastAttemptedOn: getCreatedOnDate,
+   };
+   console.log(userCreateImInput);
+});
+$("#create-error").click(function () {
+   $("#overlay-danger").toggleClass(" d-flex d-none");
 });

@@ -159,7 +159,7 @@ $("#letsgo-button-landing").click(function () {
          _id: getNewId,
          email: emailInput,
          password: passwordInput,
-         createdOn: getCreatedOnDate,
+         createdOn: Number(getCreatedOnDate),
       };
    }
    console.log(newUserSubmission);
@@ -258,8 +258,8 @@ $("#save-imagery").click(function () {
          "The syntax for making a comment in HTML is <!-- Mike's comment here -->",
       levelNum: 1,
       successfulAttemptsNum: 0,
-      createdOn: getCreatedOnDate,
-      lastAttemptedOn: getCreatedOnDate,
+      createdOn: Number(getCreatedOnDate),
+      lastAttemptedOn: Number(getCreatedOnDate),
    };
    console.log(userCreateImInput);
 });

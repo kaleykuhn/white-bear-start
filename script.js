@@ -1,30 +1,68 @@
-// overlays on create imagery
-
-/*$("#save-imagery").click(function () {
-   $("#overlay-success").toggleClass("d-flex d-none");
-   // Get the date info
-     createaDate();
-   //var for random id num
-   var randomNumberForId = Math.floor(Math.random() * 1000);
-});
-$("#create-error").click(function () {
-   $("#overlay-danger").toggleClass(" d-flex d-none");
-});
-// Get the date info
-createaDate();*/
-// Edit Cards delete button
-$("#show-delete").click(function () {
-   $("#delete-button").toggleClass("d-none");
-});
 // Landing Page
 $("#formbutton").click(function () {
    $("#form1").toggle();
    $("#formbutton").remove();
 });
-// Edit Cards delete button
-//$("#show-delete").click(function () {
-//$("#delete-button").toggleClass("d-none");
-//});
+//Create the date function
+//This will generate current date and time in two-digits
+var getCreatedOnDate = "";
+var timeMilliseconds = "";
+
+function createTheDate() {
+   var getTodayDate = new Date();
+   var dateYear = getTodayDate.getFullYear();
+   dateYear = dateYear.toString().substr(-2);
+   var dateMonth = getTodayDate.getMonth() + 1;
+   console.log(dateMonth);
+   var dateDay = getTodayDate.getDate();
+   console.log(dateDay);
+   var timeHours = getTodayDate.getHours();
+   console.log(timeHours);
+   var timeMinutes = getTodayDate.getMinutes();
+   console.log(timeMinutes);
+   var timeSeconds = getTodayDate.getSeconds();
+   console.log(timeSeconds);
+   timeMilliseconds = getTodayDate.getMilliseconds();
+   console.log(timeMilliseconds);
+
+   getCreatedOnDate =
+      "" + //turns it into a readable string
+      dateYear +
+      addTwoPadding(dateMonth) +
+      addTwoPadding(dateDay) +
+      addTwoPadding(timeHours) +
+      addTwoPadding(timeMinutes) +
+      addTwoPadding(timeSeconds);
+   console.log(getCreatedOnDate); //format of two digit number
+}
+
+//padding funtions for date and time to return 4 digits
+
+function addThreePadding(num) {
+   // A1: number
+   // R: string
+
+   var numAsString = String(num);
+   if (numAsString.length === 1) {
+      return "00" + numAsString; // 4 returns "004"
+   } else if (numAsString.length === 2) {
+      return "0" + numAsString; // 44 returns "044"
+   } else {
+      return numAsString;
+   }
+}
+function addTwoPadding(num) {
+   // A1: number
+   // R: string
+
+   var numAsString = String(num);
+   if (numAsString.length === 1) {
+      return "0" + numAsString; // 4 returns "04"
+   } else {
+      return numAsString;
+   }
+}
+
 //Email and Password Validation
 $("#letsgo-button-landing").click(function () {
    //check if email is filled out correctly
@@ -94,10 +132,11 @@ $("#letsgo-button-landing").click(function () {
       $("#inputPassword1").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
    }
-   // Create new Id amd get Created On Date
-
+   // Create new Id and get Created On Date
+   //call the getCreatedOn function to get the CreatedOn Date
+   createTheDate();
    // Date variables
-   var getTodayDate = new Date();
+   /*var getTodayDate = new Date();
    var dateYear = getTodayDate.getFullYear();
    dateYear = dateYear.toString().substr(-2);
    var dateMonth = getTodayDate.getMonth() + 1;
@@ -145,7 +184,7 @@ $("#letsgo-button-landing").click(function () {
       addTwoPadding(timeMinutes) +
       addTwoPadding(timeSeconds);
    console.log(getCreatedOnDate); //format of two digit number
-
+   */
    //variable for random number for Id
    var randomNumberForId = Math.floor(Math.random() * 1000);
 
@@ -187,12 +226,12 @@ $("#answerArea").keyup(function () {
       $("#characterCounter").removeClass("text-danger");
    }
 });
-// overlays on create imagery
+// overlays on create imagery and get validation info
 
 $("#save-imagery").click(function () {
    $("#overlay-success").toggleClass("d-flex d-none");
 
-   // Get the date info and id
+   /* // Get the date info and id
    var getTodayDate = new Date();
    var dateYear = getTodayDate.getFullYear();
    dateYear = dateYear.toString().substr(-2);
@@ -241,7 +280,10 @@ $("#save-imagery").click(function () {
       addTwoPadding(timeMinutes) +
       addTwoPadding(timeSeconds);
    console.log(getCreatedOnDate); //format of two digit number
-
+*/
+   // call the function for createdOn and the timeMilleseconds for id
+   createTheDate();
+   //
    //var for random id num
    var randomNumberForId = Math.floor(Math.random() * 1000);
    console.log(randomNumberForId);
@@ -265,4 +307,9 @@ $("#save-imagery").click(function () {
 });
 $("#create-error").click(function () {
    $("#overlay-danger").toggleClass(" d-flex d-none");
+});
+
+// Edit Cards delete button
+$("#show-delete").click(function () {
+   $("#delete-button").toggleClass("d-none");
 });

@@ -660,15 +660,20 @@ $("#save-imagery").click(function () {
    var paddedMilliseconds = addThreePadding(timeMilliseconds);
    var paddedRandomNumId = addThreePadding(randomNumberForId);
    var getNewId = paddedMilliseconds + paddedRandomNumId;
-
+   // user Create Input is tracking user inputs
    var userCreateImInput = {
       id_: getNewId,
-      imagery:
-         "A delicious shishkebab but the first bite of meat after the pointy end is spicy & makes an exclamation point appear over my head like in a JRPG.",
-      answer:
-         "The syntax for making a comment in HTML is <!-- Mike's comment here -->",
+      // encoded to prevent user from entering things that could cause security risk of database and application
+      imagery: encodeURIComponent(
+         "A delicious shishkebab but the first bite of meat after the pointy end is spicy & makes an exclamation point appear over my head like in a JRPG."
+      ),
+      // encoded to prevent users from entering things that could cause security risk of database and application
+      answer: encodeURIComponent(
+         "The syntax for making a comment in HTML is <!-- Mike's comment here -->"
+      ),
       levelNum: 1,
       successfulAttemptsNum: 0,
+      // Number makes the data of date a Number from a string
       createdOn: Number(getCreatedOnDate),
       lastAttemptedOn: Number(getCreatedOnDate),
    };

@@ -429,7 +429,7 @@ var filterCommPassw = commonPasswordList.filter((words) => {
 $("#letsgo-button-landing").click(function () {
    //check if email is filled out correctly
    var emailInput = $("#inputEmail1").val();
-   //atLocal checks the emailInput to ensure there is a local part
+   //atLocal checks the emailInput to ensure there is a local part index
    var atLocal = emailInput.indexOf("@");
    // beforeAtlocal pulls the email address of the user but cuts at @
    var beforeAtLocal = emailInput.slice(0, atLocal);

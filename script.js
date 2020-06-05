@@ -64,7 +64,7 @@ function addTwoPadding(num) {
 }
 // variable for password validation
 // common password list
-var commonPasswordList = [
+var commonPasswords = [
    "x002tp00",
    "x4ww5qdr",
    "x72jhhu3z",
@@ -418,8 +418,8 @@ var commonPasswordList = [
 ];
 
 //filter used to only give words above 8 char in password new arr
-var filterCommPassw = commonPasswordList.filter((words) => {
-   if (words.length > 8 === true) {
+var filteredPasswords = commonPasswords.filter((password) => {
+   if (password.length > 8) {
       return true;
    } else {
       return false;
@@ -469,6 +469,7 @@ $("#letsgo-button-landing").click(function () {
    //check if password is filled out correctly and validate length
    var validPassword = false;
    var passwordInput = $("#inputPassword1").val();
+   console.log(filteredPasswords.includes(passwordInput));
    if (passwordInput.length === 0) {
       $("#password-error").show();
       $("#inputPassword1").addClass("is-invalid");
@@ -489,7 +490,7 @@ $("#letsgo-button-landing").click(function () {
       $("#password-match-error").hide();
       $("#inputPassword1").addClass("is-invalid");
       // else validate to true and hide all errors
-   } else if (filterCommPassw.includes(passwordInput)) {
+   } else if (filteredPasswords.includes(passwordInput)) {
       console.log("found-in-list");
       $("#password-match-error").show();
       $("#password-error").hide();

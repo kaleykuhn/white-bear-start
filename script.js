@@ -474,16 +474,19 @@ $("#letsgo-button-landing").click(function () {
       $("#inputPassword1").addClass("is-invalid");
       $("#password-error-length").hide();
       $("#password-error-local").hide();
+      $("#password-match-error").hide();
    } else if (passwordInput.length < 9) {
       $("#password-error-length").show();
       $("#password-error").hide();
       $("#password-error-local").hide();
+      $("#password-match-error").hide();
       $("#inputPassword1").addClass("is-invalid");
       //if char in password input are the same as emailinput error
    } else if (passwordInput.indexOf(beforeAtLocal) > -1) {
       $("#password-error-local").show();
       $("#password-error").hide();
       $("#password-error-length").hide();
+      $("#password-match-error").hide();
       $("#inputPassword1").addClass("is-invalid");
       // else validate to true and hide all errors
    } else if (filterCommPassw.includes(passwordInput)) {

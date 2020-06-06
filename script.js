@@ -436,34 +436,47 @@ $("#letsgo-button-landing").click(function () {
    //userEmail represents a valid user email address
    console.log(beforeAtLocal);
    var userEmailValid = false;
+
+   differentChar = "";
+   for (let i in beforeAtLocal) {
+      if (differentChar.indexOf(beforeAtLocal[i]) === -1) {
+         differentChar = differentChar + beforeAtLocal[i];
+      }
+   }
    //if emailInput is equal to blank show error msg
    if (emailInput === "") {
-      $("#email-error").show();
+      //$("#email-error").show();
       $("#inputEmail1").addClass("is-invalid");
-   } else {
-      $("#email-error").hide();
-      $("#inputEmail1").removeClass("is-invalid");
-      $("#inputEmail1").addClass("is-valid");
-   }
-   // if email does not contain local part show error msg
-   if (atLocal == -1) {
-      $("#email-error-local").show();
-      $("#email-error").hide();
+      $("#uniqueMess").text("Please enter your email");
+      userEmailValid = false;
+   } // if email does not contain local part show error ms
+   else if (atLocal == -1) {
+      //$("#email-error-local").show();
+      //$("#email-error").hide();
       $("#inputEmail1").addClass("is-invalid");
       $("#inputEmail1").removeClass("is-valid");
+      $("#uniqueMess").text("Email must contain the  @");
+      userEmailValid = false;
+   } else if (differentChar.length < 3) {
+      $("#inputEmail").addClass("is-invalid");
+      $("#uniqueMess").text("Must enter unique characters");
+      //$("#email-error-local").hide();
+      //$("#email-error").hide();
+      userEmailValid = false;
    } else {
+      //$("#email-error").hide();
+      $("#inputEmail1").addClass("is-valid");
+      $("#inputEmail1").removeClass("is-invalid");
+      $("#uniqueMess").text("");
       userEmailValid = true;
    }
+
+   console.log(differentChar);
+
    if (userEmailValid === true) {
-      $("#email-error-local").hide();
+      //$("#email-error-local").hide();
       $("#inputEmail1").addClass("is-valid");
       $("#inputEmail1").removeClass("is-invalid");
-   }
-   // if any error is present show as invalid
-   else {
-      $("#email-error").show();
-      $("#inputEmail1").addClass("is-invalid");
-      $("#inputEmail1").removeClass("is-valid");
    }
 
    //check if password is filled out correctly and validate length
@@ -471,20 +484,23 @@ $("#letsgo-button-landing").click(function () {
    var passwordInput = $("#inputPassword1").val();
    console.log(filteredPasswords.includes(passwordInput));
    if (passwordInput.length === 0) {
-      $("#password-error").show();
+      //$("#password-error").show();
+      $("#uniquePass").text("please enter your password");
       $("#inputPassword1").addClass("is-invalid");
-      $("#password-error-length").hide();
-      $("#password-error-local").hide();
-      $("#password-match-error").hide();
+      //$("#password-error-length").hide();
+      //$("#password-error-local").hide();
+      //$("#password-match-error").hide();
    } else if (passwordInput.length < 9) {
-      $("#password-error-length").show();
-      $("#password-error").hide();
-      $("#password-error-local").hide();
-      $("#password-match-error").hide();
+      //$("#password-error-length").show();
+      $("#uniquePass").text("your password must be at least 9 chararacters");
+      //$("#password-error").hide();
+      //$("#password-error-local").hide();
+      //$("#password-match-error").hide();
       $("#inputPassword1").addClass("is-invalid");
       //if char in password input are the same as emailinput error
    } else if (passwordInput.indexOf(beforeAtLocal) > -1) {
-      $("#password-error-local").show();
+      // $("#password-error-local").show();
+      $("#uniquePass").text("your password cannot contain email address");
       $("#password-error").hide();
       $("#password-error-length").hide();
       $("#password-match-error").hide();
@@ -492,17 +508,19 @@ $("#letsgo-button-landing").click(function () {
       // else validate to true and hide all errors
    } else if (filteredPasswords.includes(passwordInput)) {
       console.log("found-in-list");
-      $("#password-match-error").show();
-      $("#password-error").hide();
-      $("#password-error-local").hide();
-      $("#password-error-length").hide();
+      $("#uniquePass").text("password must not be on list of common passwords");
+      //$("#password-match-error").show();
+      //$("#password-error").hide();
+      //$("#password-error-local").hide();
+      //$("#password-error-length").hide();
       $("#inputPassword1").addClass("is-invalid");
    } else {
       validPassword = true;
-      $("#password-error-local").hide();
-      $("#password-error").hide();
-      $("#password-error-length").hide();
-      $("#password-match-error").hide();
+      $("#uniquePass").text("");
+      //$("#password-error-local").hide();
+      //$("#password-error").hide();
+      //$("#password-error-length").hide();
+      //$("#password-match-error").hide();
       $("#inputPassword1").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
    }
@@ -529,6 +547,34 @@ $("#letsgo-button-landing").click(function () {
    }
    console.log(newUserSubmission);
 });
+
+/*$("#letsgo-button-landing").click(function () {
+   //check if email is filled out correctly
+   var emailInput = $("#inputEmail1").val();
+   //atLocal checks the emailInput to ensure there is a local part index
+   var atLocal = emailInput.indexOf("@");
+   // beforeAtlocal pulls the email address of the user but cuts at @
+   var beforeAtLocal = emailInput.slice(0, atLocal);
+   //userEmail represents a valid user email address
+   console.log(beforeAtLocal);
+   var userEmailValid = false;
+   //if emailInput is equal to blank show error msg
+   differentChar = "";
+   for (let i in beforeAtLocal) {
+      if (differentChar.indexOf(beforeAtLocal[i]) === -1) {
+         differentChar = differentChar + beforeAtLocal[i];
+      }
+   }
+   console.log(differentChar);
+   if (differentChar.length < 3) {
+      $("#inputEmail").addClass("is-invalid");
+      $("#uniqueMess").text("Must enter unique characters");
+      $("#email-error-local").hide();
+      $("#email-error").hide();
+   } else {
+      userEmailValid = true;
+   }
+});*/
 //create cue page
 //character counter
 $("#answerArea").keyup(function () {

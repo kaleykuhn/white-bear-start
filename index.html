@@ -56,11 +56,14 @@
                            id="emailHelp"
                            class="form-text text-muted"
                         ></small>-->
-                        <div class="invalid-feedback" id="email-error">
-                           Please enter your email address
-                        </div>
-                        <div class="invalid-feedback" id="email-error-local">
-                           Your email must contain @
+                        <!-- <div class="invalid-feedback" id="email-error">
+                           Please enter your email address -->
+                        <!-- </div> -->
+                        <!--<div class="invalid-feedback" id="email-error-local">
+                           Your email must contain @-->
+
+                        <div>
+                           <small id="uniqueMess" class="text-danger"> </small>
                         </div>
 
                         <label for="inputPassword1" class="text-muted"
@@ -72,7 +75,8 @@
                            id="inputPassword1"
                            placeholder=""
                         />
-                        <div class="invalid-feedback" id="password-error">
+
+                        <!-- <div class="invalid-feedback" id="password-error">
                            Please enter your password
                         </div>
                         <div
@@ -86,8 +90,10 @@
                         </div>
                         <div class="invalid-feedback" id="password-match-error">
                            Your password cannot contain common password!
+                        </div>-->
+                        <div>
+                           <small id="uniquePass" class="text-danger"> </small>
                         </div>
-
                         <button
                            class="btn btn-success btn-block mt-6"
                            id="letsgo-button-landing"
@@ -98,6 +104,7 @@
                   </div>
                </div>
             </div>
+
             <div
                class="offset-1 col-10 offset-sm-1 col-sm-9 offset-md-1 col-md-4 offset-lg-1 col-lg-4 offset-xl-1 col-xl-4 mb-6 mt-8"
             >

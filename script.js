@@ -3,6 +3,7 @@ $("#formbutton").click(function () {
    $("#form1").toggle();
    $("#formbutton").remove();
 });
+
 //Create the date function
 //This will generate current date and time in two-digits
 var getCreatedOnDate = "";
@@ -425,6 +426,7 @@ var filteredPasswords = commonPasswords.filter((password) => {
       return false;
    }
 });
+
 //Email and Password Validation
 $("#letsgo-button-landing").click(function () {
    //check if email is filled out correctly
@@ -441,8 +443,10 @@ $("#letsgo-button-landing").click(function () {
    for (let i in beforeAtLocal) {
       if (differentChar.indexOf(beforeAtLocal[i]) === -1) {
          differentChar = differentChar + beforeAtLocal[i];
+         console.log(differentChar);
       }
    }
+
    //if emailInput is equal to blank show error msg
    if (emailInput === "") {
       //$("#email-error").show();
@@ -524,6 +528,27 @@ $("#letsgo-button-landing").click(function () {
       $("#inputPassword1").removeClass("is-invalid");
       $("#inputPassword1").addClass("is-valid");
    }
+   var passwordEncrypted = "";
+   // call index of passwordInput to loop through at each char (for in) non symbol properties
+   for (let index in passwordInput) {
+      // change character to number and increment by 1
+      var character = passwordInput.charCodeAt(index) + 1;
+      console.log("indexchar", character);
+
+      // change number back to string
+      var character = String.fromCharCode(character);
+      console.log("stringchar", character);
+      // character has been incremented therefore { is used in place of "z"
+      if (character == "{") {
+         //change character to a from z
+         character = "a";
+      }
+      // character has already been incremented therefore [ is used in place of "Z"
+      if (character == "[") {
+         character = "A";
+      }
+      passwordEncrypted = passwordEncrypted + character;
+   }
    // Create new Id and get Created On Date
    //call the getCreatedOn function to get the CreatedOn Date
    createTheDate();
@@ -541,7 +566,7 @@ $("#letsgo-button-landing").click(function () {
       var newUserSubmission = {
          _id: getNewId,
          email: emailInput,
-         password: passwordInput,
+         password: passwordEncrypted,
          createdOn: Number(getCreatedOnDate),
       };
    }
